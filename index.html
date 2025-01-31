@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crocodile Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .fact-display {
+            margin: 20px 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .fact-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .fact-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Crocodile Facts</h1>
+        <div id="fact-display" class="fact-display">
+            Click the button to see a random crocodile fact!
+        </div>
+        <button id="fact-button" class="fact-button">Show Random Fact</button>
+    </div>
+    <script>
+        const facts = [
+            {
+                "fact": "Ancient Reptiles",
+                "description": "Crocodiles have been around for over 200 million years, making them one of the oldest living reptiles, having survived the extinction event that wiped out the dinosaurs."
+            },
+            {
+                "fact": "Diverse Species",
+                "description": "There are 23 different species of crocodiles, which vary in size and habitat. The largest is the saltwater crocodile, which can grow up to 23 feet long."
+            },
+            {
+                "fact": "Habitat",
+                "description": "Crocodiles are found in tropical regions of Africa, Asia, the Americas, and Australia. They typically inhabit freshwater environments like rivers, lakes, wetlands, and sometimes brackish water."
+            },
+            {
+                "fact": "Powerful Jaws",
+                "description": "Crocodiles have one of the strongest bites in the animal kingdom. Their jaws can exert a force of over 3,700 pounds per square inch (psi)."
+            },
+            {
+                "fact": "Cold-blooded",
+                "description": "As ectothermic animals, crocodiles rely on external sources of heat to regulate their body temperature. They often bask in the sun to warm up and retreat to the water to cool down."
+            },
+            {
+                "fact": "Ambush Predators",
+                "description": "Crocodiles are stealthy hunters. They often lie in wait, partially submerged, to ambush prey that comes close to the water's edge."
+            },
+            {
+                "fact": "Parental Care",
+                "description": "Unlike many reptiles, female crocodiles exhibit parental care. They guard their nests and help hatchlings reach the water after they emerge from their eggs."
+            },
+            {
+                "fact": "Communication",
+                "description": "Crocodiles communicate through vocalizations, such as grunts, growls, and hisses. Hatchlings even make noises before they hatch to signal their mothers."
+            },
+            {
+                "fact": "Longevity",
+                "description": "Crocodiles can live for a long time, with some species living up to 70 years or more in the wild."
+            },
+            {
+                "fact": "Conservation Status",
+                "description": "While some crocodile species are abundant, others are threatened or endangered due to habitat loss, poaching, and human conflict. Conservation efforts are in place to protect these ancient reptiles."
+            }
+        ];
+
+        document.getElementById('fact-button').addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const randomFact = facts[randomIndex];
+            document.getElementById('fact-display').innerHTML = `<strong>${randomFact.fact}</strong>: ${randomFact.description}`;
+        });
+    </script>
+</body>
+</html>
